@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.ProfilePage"
+             BackgroundColor="Black"
+             Title="My Profile">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="ProfilePic" Aspect="AspectFit"/>
+            <BoxView HeightRequest="1" BackgroundColor="#ffffff" />
+            <StackLayout Padding="15">
+                <Label Text="Student Profile" FontAttributes="Bold" TextColor="White" />
+                <Label Text="My name is Fakuade Olusesan Ayodeji,an origin of Oye-Ekiti in Ekiti State;I am an ELECTRICAL ENGINEER in the making in Rivers State University of Science and Technology,Port Harcourt,Nigeria"
+                       TextColor="White"/>
+            </StackLayout>
+            <BoxView HeightRequest="1" BackgroundColor="#ffffff" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <Button Text="Next"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

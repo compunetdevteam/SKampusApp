@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.CourseRegTabbed"
+            Title="Course Registration">
+    
+  <!--Pages can be added as references or inline-->
+  <!--   
+  <ContentPage Title="Selected Courses" >
+      <StackLayout>
+          <Label Text="Tabbed Page 1"></Label>
+      </StackLayout>
+    </ContentPage>-->
+    <!--<local:CourseRegPage></local:CourseRegPage>-->
+    <ContentPage Title="Courses" >
+       
+            <ScrollView>
+
+                <ListView x:Name="navigationDrawerList" RowHeight="55" SeparatorVisibility="Default"
+                          ItemsSource="{Binding CourseRegs, Mode=TwoWay}" BackgroundColor="#e8e8e8e" ItemTapped="OnItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Add" Clicked="Add" />
+                                </ViewCell.ContextActions>
+                                <!-- Main design for the menu items-->
+
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                <Label Text="{Binding FullName, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"></Label>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!--<Button Text="Submit" Clicked="NextCourseReg"></Button>-->
+            </ScrollView>
+       
+       
+    </ContentPage>
+    
+    <ContentPage Title="Selected Courses">
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="Submit All" Clicked="NextCourseReg" Icon="iconsignout" />
+        </ContentPage.ToolbarItems>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <StackLayout >
+                <Button Text="Submit" Clicked="NextCourseReg"  BackgroundColor="#3897F0" TextColor="#485992"/>
+            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <ListView x:Name="navigationDrawerList2" RowHeight="55" SeparatorVisibility="Default"
+                          ItemsSource="{Binding SelectedCourseRegs, Mode=TwoWay}" ItemTapped="SelectedCourseTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Remove" Clicked="Remove" />
+                                </ViewCell.ContextActions>
+                                <!-- Main design for the menu items-->
+
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                    <Label Text="CourseName:" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"/>
+                                    <Label Text="{Binding FullName, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"/>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Grid>
+    </ContentPage>
+
+</TabbedPage>

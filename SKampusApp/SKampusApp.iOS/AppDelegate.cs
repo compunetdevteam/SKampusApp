@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
 using UIKit;
+using SKampusApp;
 
 namespace SKampusApp.iOS
 {
@@ -22,8 +20,9 @@ namespace SKampusApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Rox.VideoIos.Init();
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new SKampusApp.App());
 
             return base.FinishedLaunching(app, options);
         }

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.CourseRegPage"
+             Title="Course Registration">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="List of Courses!"
+                   FontSize="Large" 
+                   HorizontalOptions="Start" />
+            <BoxView HeightRequest="1" BackgroundColor="#ffffff" />
+
+            <ScrollView>
+
+                <ListView x:Name="navigationDrawerList" RowHeight="55" SeparatorVisibility="Default"
+                         ItemsSource="{Binding CourseRegs, Mode=TwoWay}" BackgroundColor="#e8e8e8e" ItemTapped="OnItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Add" Clicked="Add" />
+                                </ViewCell.ContextActions>
+                                <!-- Main design for the menu items-->
+
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                    <Label Text="{Binding FullName, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"></Label>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Label Text="-------------------------" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <Label Text="List of Selected Courses!"
+                   FontSize="Large" 
+                   HorizontalOptions="Start" />
+            <Button Text="Refresh" Command="RefreshCommand"/>
+            <BoxView HeightRequest="1" BackgroundColor="Black" />
+
+            <ScrollView>
+
+
+                <ListView x:Name="navigationDrawerList2" RowHeight="55" SeparatorVisibility="Default"
+                              ItemsSource="{Binding SelectedCourseRegs, Mode=TwoWay}" ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Remove" Clicked="Remove" />
+                                </ViewCell.ContextActions>
+                                <!-- Main design for the menu items-->
+
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                                 Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                    <Label Text="{Binding FullName, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                               TextColor="Black"/>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button Text="Submit" Clicked="NextCourseReg"></Button>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

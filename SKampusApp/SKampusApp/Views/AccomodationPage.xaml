@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.AccomodationPage">
+   
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <WebView x:Name="hostelBrower" VerticalOptions="FillAndExpand" Navigated="IsNavigated"
+                     Navigating="IsNavigating">
+                
+            </WebView>
+        </StackLayout >
+
+        <Frame  AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize, AutoSize"
+                x:Name="loading" BackgroundColor="Gray" Opacity="0.9"
+                IsVisible="True">
+            <StackLayout>
+                <ActivityIndicator IsRunning="True" />
+                <Label Text="Loading..." TextColor="White" />
+                
+            </StackLayout>
+            
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>

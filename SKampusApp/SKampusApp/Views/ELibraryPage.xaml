@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.ELibraryPage"
+            Title="E-Library">
+    <ContentPage Title="Science Direct" >
+        <ContentPage.Content>
+            <AbsoluteLayout>
+                <StackLayout AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <WebView x:Name="ScienceBrower" VerticalOptions="FillAndExpand" Navigated="ScienceIsNavigated"
+                             Navigating="ScienceIsNavigating">
+
+                    </WebView>
+                </StackLayout >
+
+                <Frame  AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize, AutoSize"
+                        x:Name="Scienceloading" BackgroundColor="Gray" Opacity="0.9"
+                        IsVisible="True">
+                    <StackLayout>
+                        <ActivityIndicator IsRunning="True" />
+                        <Label Text="Loading..." TextColor="White" />
+
+                    </StackLayout>
+
+                </Frame>
+            </AbsoluteLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="EBSCO Jornal" >
+        <ContentPage.Content>
+            <AbsoluteLayout>
+                <StackLayout AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <WebView x:Name="EbscoBrower" VerticalOptions="FillAndExpand" Navigated="EbscoIsNavigated"
+                             Navigating="EbscoIsNavigating">
+
+                    </WebView>
+                </StackLayout >
+
+                <Frame  AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize, AutoSize"
+                        x:Name="Ebscoloading" BackgroundColor="Gray" Opacity="0.9"
+                        IsVisible="True">
+                    <StackLayout>
+                        <ActivityIndicator IsRunning="True" />
+                        <Label Text="EbscoLoading..." TextColor="White" />
+
+                    </StackLayout>
+
+                </Frame>
+            </AbsoluteLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Glown" >
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <WebView x:Name="GlownBrower" VerticalOptions="FillAndExpand" Navigated="GlownIsNavigated"
+                         Navigating="GlownIsNavigating">
+
+                </WebView>
+            </StackLayout >
+
+            <Frame  AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize, AutoSize"
+                    x:Name="Glownloading" BackgroundColor="Gray" Opacity="0.9"
+                    IsVisible="True">
+                <StackLayout>
+                    <ActivityIndicator IsRunning="True" />
+                    <Label Text="Loading..." TextColor="White" />
+
+                </StackLayout>
+
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage>
+
+</TabbedPage>

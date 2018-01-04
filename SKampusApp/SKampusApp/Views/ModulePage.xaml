@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.ModulePage"
+             Title="Modules">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image x:Name="ProfilePic" Aspect="AspectFit"/>
+                <BoxView HeightRequest="1" BackgroundColor="#ffffff" />
+                <StackLayout Padding="15">
+                    <Label x:Name="coursecode" FontAttributes="Bold" TextColor="Black" />
+                    <Label x:Name="courseName"
+                           TextColor="Black"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" BackgroundColor="#ffffff" />
+                <ListView x:Name="ModuleList" RowHeight="55" SeparatorVisibility="Default"
+                          ItemsSource="{Binding Topics, Mode=TwoWay}" BackgroundColor="#e8e8e8e" ItemTapped="OnItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                    <Label Text="{Binding ModuleName, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"/>
+                                    <Label Text="{Binding ModuleDescription, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"/>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

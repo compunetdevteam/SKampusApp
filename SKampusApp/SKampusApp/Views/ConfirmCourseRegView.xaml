@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.ConfirmCourseRegView"
+             Title="Selected Course">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <StackLayout Margin="20,0,20,0">
+                <Button Text="Submit Registration" Clicked="SubmitCourse"  BackgroundColor="#3897F0" TextColor="#485992"/>
+                <ActivityIndicator  Grid.Row="3" x:Name="LoginActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center"
+                                    HorizontalOptions="Center" Color="Blue"/>
+            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <ListView x:Name="ConfirmCourseList" RowHeight="55" SeparatorVisibility="Default"
+                          ItemTapped="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <!-- Main design for the menu items-->
+
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                    <Label Text="CourseName:" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"/>
+                                    <Label Text="{Binding FullName, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                           TextColor="Black"/>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Grid>
+        <!--<StackLayout>
+            <ListView x:Name="ConfirmCourseList" RowHeight="55" SeparatorVisibility="Default"
+                      BackgroundColor="#e8e8e8e" ItemSelected="OnMenuItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            --><!-- Main design for the menu items--><!--
+                            <StackLayout VerticalOptions="FillAndExpand"
+                                         Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                <Label Text="{Binding FullName, Mode=TwoWay}" FontSize="Small" VerticalOptions="Center"
+                                       TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>

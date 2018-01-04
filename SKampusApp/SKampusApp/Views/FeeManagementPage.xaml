@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKampusApp.Views.FeeManagementPage"
+             Title="Fee Management">
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <WebView x:Name="FeeBrowser"  VerticalOptions="FillAndExpand" Navigated="WebOnEndNavigating"
+                     Navigating="WebOnNavigating">
+
+            </WebView>
+        </StackLayout >
+
+        <Frame  AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize, AutoSize"
+                x:Name="loading" BackgroundColor="Gray" Opacity="0.9"
+                IsVisible="True">
+            <StackLayout>
+                <ActivityIndicator IsRunning="True" />
+                <Label Text="Loading..." TextColor="White" />
+
+            </StackLayout>
+
+        </Frame>
+    </AbsoluteLayout>
+    <!--<ContentPage.Content>
+       
+        <StackLayout>
+            <Label x:Name="LoadingLabel"
+                   Text="Loading..."
+                   HorizontalOptions="Center"/>
+            <WebView x:Name="Browser"
+                     HeightRequest="1000"
+                     WidthRequest="1000"
+                     Navigating="WebOnNavigating"
+                     Navigated="WebOnEndNavigating" />
+        </StackLayout>
+    </ContentPage.Content>-->
+</ContentPage>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sKampusApp="clr-namespace:SKampusApp;assembly=SKampusApp"
+            xmlns:rox="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable"             x:Class="SKampusApp.Views.TopicDetalPage">
+    <ContentPage x:Class="DisplayPDF.WebViewPage"
+                 Title="PDF"
+                 Padding="0,0,0,0">
+        <ContentPage.Content>
+            <sKampusApp:CustomWebView Source="{Binding PdfUrl}" />
+            <!--<WebView Source="http://codedenim.azurewebsites.net/MaterialUpload/C1_Module%201.pdf" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />-->
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Video" >
+        <rox:VideoView FullScreen="True" Volume="Infinity"  LoopPlay="True" ShowController="True" Source="http://fightathlete.com.rose.arvixe.com/Upload/Late%20For%20Work.mp4" />
+    </ContentPage>
+    <ContentPage Title="MP3" >
+        <rox:VideoView FullScreen="True" Volume="Infinity"  LoopPlay="True" ShowController="True" Source="https://70mack.co/wp-content/upload/2017/10/%20Eminem-Believe.mp3" />
+
+    </ContentPage>
+</TabbedPage>

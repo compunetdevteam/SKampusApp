@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:rox="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable"
+             x:Class="SKampusApp.Views.VideoPlayer"
+             Title="Video">
+    <ContentPage.Content>
+            <!--<Button x:Name="PlayStopButton" Text="Play" Clicked="PlayStopClicked" />-->
+            <!--<forms:VideoView WidthRequest="360" Height="202" />-->
+            <rox:VideoView AutoPlay="True" LoopPlay="True" ShowController="True" Source="http://fightathlete.com.rose.arvixe.com/Upload/Late%20For%20Work.mp4" />
+        
+        
+    </ContentPage.Content>
+</ContentPage>
